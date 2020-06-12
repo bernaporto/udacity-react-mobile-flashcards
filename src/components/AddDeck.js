@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Button, Text, TextInput, View } from "react-native";
+import { connect } from "react-redux";
+import { handleAddDeck } from "../store/actions";
 
-function AddDeckView({ navigation }) {
+function AddDeckView({ dispatch, navigation }) {
   const [ value, updateValue ] = useState("");
 
   const submit = () => {
-    // dispatch
-    
-    // clean up value
+    dispatch(handleAddDeck({ name: value }));
+
     updateValue("");
-    
-    // navigate
+
     navigation.navigate("Decks");
   };
 
@@ -27,4 +27,4 @@ function AddDeckView({ navigation }) {
   );
 }
 
-export default AddDeckView;
+export default connect()(AddDeckView);
