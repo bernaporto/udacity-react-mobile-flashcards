@@ -8,7 +8,7 @@ function DeckItem(props) {
   const { data } = props;
   const { title, questions = [] } = data;
 
-  const showDetails = () => navigation.navigate("Deck");
+  const showDetails = () => navigation.navigate("Deck", { id: data.id });
 
   return (
     <TouchableWithoutFeedback onPress={showDetails}>
