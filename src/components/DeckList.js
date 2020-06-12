@@ -2,6 +2,7 @@ import React from "react";
 import { View, FlatList } from "react-native";
 import { connect } from "react-redux";
 import { valuesToArray } from "../utils/utils";
+
 import DeckItem from "./DeckItem";
 
 function DeckList(props) {
@@ -11,8 +12,9 @@ function DeckList(props) {
     <View>
       <FlatList
         data={decks}
-        renderItem={(data) => (
-          <DeckItem data={data.item}/>
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <DeckItem data={item}/>
         )}
       />
     </View>

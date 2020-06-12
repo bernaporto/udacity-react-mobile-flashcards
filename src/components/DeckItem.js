@@ -1,14 +1,22 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableWithoutFeedback } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 function DeckItem(props) {
-  const { title, questions = [] } = props.data;
+  const navigation = useNavigation();
+
+  const { data } = props;
+  const { title, questions = [] } = data;
+
+  const showDetails = () => navigation.navigate("Deck");
 
   return (
-    <View>
-      <Text>{ title }</Text>
-      <Text>{ `${questions.length} cards` }</Text>
-    </View>
+    <TouchableWithoutFeedback onPress={showDetails}>
+      <View>
+        <Text>{ title }</Text>
+        <Text>{ `${questions.length} cards` }</Text>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
