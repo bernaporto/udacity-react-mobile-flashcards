@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 import { handleAddDeck } from "../store/actions";
 
 function AddDeckView({ dispatch, navigation }) {
-  const [ value, updateValue ] = useState("");
+  const [ title, updateTitle ] = useState("");
 
   const submit = () => {
-    dispatch(handleAddDeck({ name: value }));
+    dispatch(handleAddDeck({ title }));
 
-    updateValue("");
+    updateTitle("");
 
     navigation.navigate("Decks");
   };
@@ -19,8 +19,8 @@ function AddDeckView({ dispatch, navigation }) {
       <Text>What is the title of the new deck?</Text>
       <TextInput
         style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-        onChangeText={updateValue}
-        value={value}
+        onChangeText={updateTitle}
+        value={title}
       />
       <Button title="Create Deck" onPress={submit}/>
     </View>

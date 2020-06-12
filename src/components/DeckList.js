@@ -1,16 +1,27 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, FlatList } from "react-native";
+import { connect } from "react-redux";
+import { valuesToArray } from "../utils/utils";
 import DeckItem from "./DeckItem";
 
 function DeckList(props) {
+  const { decks } = props;
+
   return (
     <View>
-      <Text>DeckList</Text>
-      <DeckItem/>
-      <DeckItem/>
-      <DeckItem/>
+      <FlatList
+        data={decks}
+        renderItem={(data) => (
+          <DeckItem data={data.item}/>
+        )}
+      />
     </View>
   );
 }
 
-export default DeckList;
+function mapStateToProps(state) {
+  return {
+    decks: valuesToArray(state),
+  };
+}
+export default connect(mapStateToProps)(DeckList);
