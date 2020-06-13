@@ -43,7 +43,6 @@ const input = StyleSheet.create({
 
 const button = StyleSheet.create({
   default: {
-    backgroundColor: Colors.PRIMARY,
     padding: 6,
     borderRadius: 2,
     height: 35,
@@ -52,7 +51,6 @@ const button = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: Colors.WHITE,
     fontSize: 12,
     fontWeight: "bold",
     textAlign: 'center',

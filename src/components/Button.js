@@ -4,17 +4,21 @@ import { Colors } from "../utils/constants";
 import styles from "../styles";
 
 function Button(props) {
-  const { color, disabled, onPress, title } = props;
+  const { color, disabled, clear, onPress, title } = props;
 
-  const style = [
+  const tintColor = disabled ? Colors.GREY : color || Colors.PRIMARY;
+  const buttonStyle = [
     styles.button.default,
-    {
-      backgroundColor: disabled ? Colors.GREY : color || Colors.PRIMARY,
-    }
+    { backgroundColor: clear ? 'transparent' : tintColor },
   ];
+  const textStyle = [
+    styles.button.text,
+    { color: clear ? tintColor : Colors.WHITE },
+  ];
+
   return (
-    <TouchableOpacity disabled={disabled} style={style} onPress={onPress}>
-      <Text style={styles.button.text}>{ title.toUpperCase() }</Text>
+    <TouchableOpacity disabled={disabled} style={buttonStyle} onPress={onPress}>
+      <Text style={textStyle}>{ title.toUpperCase() }</Text>
     </TouchableOpacity>
   )
 }

@@ -13,6 +13,7 @@ function DeckView(props) {
   const { title = "", questions = [] } = data;
 
   const showAddCard = () => navigation.navigate(ScreenIds.ADD_CARD, { id: data.id });
+  const startQuiz = () => navigation.navigate(ScreenIds.QUIZ, { id: data.id });
   const deleteDeck = () => {
     navigation.goBack();
     dispatch(handleDeleteDeck(data));
@@ -23,9 +24,11 @@ function DeckView(props) {
       <View style={[styles.card, { flex: 1 }]}>
         <DeckDetails title={title} cardAmount={questions.length} />
 
+        <View style={{ marginBottom: 10 }}/>
+
         <Button title="Add Card" onPress={showAddCard} />
-        <Button title="Start Quiz" onPress={() => { }} />
-        <Button title="Delete Deck" onPress={deleteDeck} color={Colors.WARNING}/>
+        <Button title="Start Quiz" onPress={startQuiz} color={Colors.SECONDARY}/>
+        <Button title="Delete Deck" clear onPress={deleteDeck} color={Colors.WARNING}/>
       </View>
     </View>
   );
