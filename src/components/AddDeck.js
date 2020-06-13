@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
 import { handleAddDeck } from "../store/actions";
+import { TabIds } from "../utils/constants";
 import styles from "../styles";
+
 import Button from "./Button";
 import InputField from "./InputField";
 
@@ -14,7 +16,7 @@ function AddDeckView({ dispatch, navigation }) {
 
     updateTitle("");
 
-    navigation.navigate("Decks");
+    navigation.navigate(TabIds.DECKS);
   };
 
   return(

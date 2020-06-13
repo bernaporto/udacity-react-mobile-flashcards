@@ -9,3 +9,15 @@ export const Colors = {
   DARK_GREY: "#777",
   BLACK: "#000",
 };
+
+export const ScreenIds = {
+  HOME: "HOME",
+  ADD_CARD: "ADD_CARD",
+  DECK: "DECK",
+  QUIZ: "QUIZ",
+};
+
+export const TabIds = {
+  DECKS: "DECKS",
+  ADD_DECK: "ADD_DECK",
+};

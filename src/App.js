@@ -3,6 +3,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, TransitionSpecs } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
+import { ScreenIds } from './utils/constants';
 import store from './store';
 
 import Home from './components/Home';
@@ -16,9 +17,9 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} options={options}/>
-          <Stack.Screen name="Deck" component={DeckView} options={options}/>
-          <Stack.Screen name="AddCard" component={AddCard} options={options}/>
+          <Stack.Screen name={ScreenIds.HOME} component={Home} options={options}/>
+          <Stack.Screen name={ScreenIds.DECK} component={DeckView} options={options}/>
+          <Stack.Screen name={ScreenIds.ADD_CARD} component={AddCard} options={options}/>
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

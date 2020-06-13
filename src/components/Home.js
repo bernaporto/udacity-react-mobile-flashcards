@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { connect } from "react-redux";
 import { handleInitialData } from "../store/actions";
+import { TabIds } from "../utils/constants";
 
 import DeckList from "./DeckList";
 import AddDeck from "./AddDeck";
@@ -16,8 +17,8 @@ class Home extends Component {
   render() {
     return (
       <Tabs.Navigator>
-        <Tabs.Screen name="Decks" component={DeckList} />
-        <Tabs.Screen name="Add Deck" component={AddDeck} />
+        <Tabs.Screen name={TabIds.DECKS} component={DeckList} />
+        <Tabs.Screen name={TabIds.ADD_DECK} component={AddDeck} />
       </Tabs.Navigator>
     );
   }

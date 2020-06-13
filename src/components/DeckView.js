@@ -2,17 +2,17 @@ import React from "react";
 import { View } from "react-native";
 import { connect } from "react-redux";
 import { handleDeleteDeck } from "../store/actions";
+import { Colors, ScreenIds } from "../utils/constants";
 import styles from "../styles";
 
 import Button from "./Button";
 import DeckDetails from "./DeckDetails";
-import { Colors } from "../utils/constants";
 
 function DeckView(props) {
   const { data, dispatch, navigation } = props;
   const { title = "", questions = [] } = data;
 
-  const showAddCard = () => navigation.navigate("AddCard", { id: data.id });
+  const showAddCard = () => navigation.navigate(ScreenIds.ADD_CARD, { id: data.id });
   const deleteDeck = () => {
     navigation.goBack();
     dispatch(handleDeleteDeck(data));
