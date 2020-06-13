@@ -4,12 +4,13 @@ import { connect } from "react-redux";
 import { valuesToArray } from "../utils/utils";
 
 import DeckItem from "./DeckItem";
+import styles from "../styles";
 
 function DeckList(props) {
   const { decks } = props;
 
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={decks}
         keyExtractor={item => item.id}

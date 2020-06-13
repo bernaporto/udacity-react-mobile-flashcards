@@ -1,6 +1,8 @@
 import React from "react";
-import { View, Text, TouchableWithoutFeedback } from "react-native";
+import { TouchableWithoutFeedback, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import DeckDetails from "./DeckDetails";
+import styles from "../styles";
 
 function DeckItem(props) {
   const navigation = useNavigation();
@@ -12,9 +14,8 @@ function DeckItem(props) {
 
   return (
     <TouchableWithoutFeedback onPress={showDetails}>
-      <View>
-        <Text>{ title }</Text>
-        <Text>{ `${questions.length} cards` }</Text>
+      <View style={[styles.card, styles.center]}>
+        <DeckDetails title={title} cardAmount={questions.length} />
       </View>
     </TouchableWithoutFeedback>
   );
