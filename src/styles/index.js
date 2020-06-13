@@ -17,8 +17,10 @@ const main = StyleSheet.create({
   center: {
     alignContent: "center",
     justifyContent: "center",
+  },
+  centerText: {
     textAlign: "center",
-  }
+  },
 });
 
 const input = StyleSheet.create({

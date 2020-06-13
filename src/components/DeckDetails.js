@@ -9,7 +9,7 @@ function DeckDetails(props) {
   return (
     <View>
       <Title>{title}</Title>
-      <Text style={styles.center}>{`${cardAmount} cards`}</Text>
+      <Text style={styles.centerText}>{`${cardAmount} cards`}</Text>
     </View>
   );
 }
