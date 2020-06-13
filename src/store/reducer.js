@@ -10,10 +10,7 @@ export default function decks(state = {}, action) {
       };
 
     case ActionType.SET_DECK:
-      return {
-        ...state,
-        [payload.id]: payload,
-      };
+      return mergeDeck(state, payload);
 
     case ActionType.DELETE_DECK:
       delete state[payload];
@@ -23,15 +20,19 @@ export default function decks(state = {}, action) {
 
     case ActionType.ADD_CARD:
       const { id, card } = payload;
-      return {
-        ...state,
-        [id]: {
-          ...state[id],
-          questions: (state[id].questions || []).concat([card]),
-        }
-      };
+      const deck = { ...state[id] };
+      deck.questions = (deck.questions || []).concat([card]);
+
+      return mergeDeck(state, deck);
   
     default:
       return state;
   }
+}
+
+function mergeDeck(state, deck) {
+  const newState = { ...state };
+  newState[deck.id] = deck;
+
+  return newState;
 }

@@ -10,7 +10,7 @@ import { Colors } from "../utils/constants";
 
 function DeckView(props) {
   const { data, dispatch, navigation } = props;
-  const { title, questions = [] } = data;
+  const { title = "", questions = [] } = data;
 
   const showAddCard = () => navigation.navigate("AddCard", { id: data.id });
   const deleteDeck = () => {
@@ -35,7 +35,7 @@ function mapStateToProps(state, { route }) {
   const id = route.params.id;
 
   return {
-    data: state[id],
+    data: state[id] || {},
   };
 }
 
