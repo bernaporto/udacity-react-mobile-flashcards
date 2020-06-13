@@ -3,7 +3,9 @@ export const Colors = {
   SECONDARY: "#ff7600",
   BACKGROUND: "#394458",
   WARNING: "#dd3c3c",
-  WHITE: "#FFFFFF",
-  GREY: "#CCCCCC",
-  BLACK: "#000000",
+  
+  WHITE: "#FFF",
+  GREY: "#CCC",
+  DARK_GREY: "#777",
+  BLACK: "#000",
 };

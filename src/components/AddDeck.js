@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { TextInput, View } from "react-native";
+import { View } from "react-native";
 import { connect } from "react-redux";
 import { handleAddDeck } from "../store/actions";
 import styles from "../styles";
 import Title from "./Title";
 import Button from "./Button";
+import InputField from "./InputField";
 
 function AddDeckView({ dispatch, navigation }) {
   const [ title, updateTitle ] = useState("");
@@ -22,8 +23,9 @@ function AddDeckView({ dispatch, navigation }) {
       <View style={[styles.card, { flex: 1 }]}>
         <Title>What is the title of the new deck?</Title>
 
-        <TextInput
-          style={styles.input.textField}
+        <View style={{ marginBottom: 10 }}/>
+
+        <InputField
           onChangeText={updateTitle}
           value={title}
         />

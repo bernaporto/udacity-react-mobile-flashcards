@@ -5,20 +5,28 @@ export const StorageKey = {
   DECK_LIST: 'Flashcards:DECK_LIST',
 };
 
+async function mergeItem(id, entry) {
+  await AsyncStorage.mergeItem(
+    StorageKey.DECK_LIST,
+    JSON.stringify({
+      [id]: entry,
+    }),
+  );  
+};
+
 function getApi() {
   return {
     async create(data) {
       const id = generateUID();
       const entry = { ...data, id };
 
-      await AsyncStorage.mergeItem(
-        StorageKey.DECK_LIST,
-        JSON.stringify({
-          [id]: entry,
-        }),
-      );
+      await mergeItem(id, entry);
 
       return entry;
+    },
+
+    async update(data) {
+      await mergeItem(data.id, data);
     },
 
     async readAll() {

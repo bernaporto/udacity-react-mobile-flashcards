@@ -24,10 +24,16 @@ const main = StyleSheet.create({
 });
 
 const input = StyleSheet.create({
-  textField: {
-    height: 40,
-    marginTop: 10,
+  container: {
     marginBottom: 10,
+  },
+  title: {
+    fontSize: 12,
+    color: Colors.DARK_GREY,
+    marginBottom: 4,
+  },
+  inputField: {
+    height: 40,
     padding: 10,
     borderColor: 'gray',
     borderWidth: 1,

@@ -7,6 +7,7 @@ import store from './store';
 
 import Home from './components/Home';
 import DeckView from './components/DeckView';
+import AddCard from './components/AddCard';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Deck" component={DeckView} />
+          <Stack.Screen name="AddCard" component={AddCard} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

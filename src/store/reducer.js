@@ -9,7 +9,7 @@ export default function decks(state = {}, action) {
         ...payload,
       };
 
-    case ActionType.ADD_DECK:
+    case ActionType.SET_DECK:
       return {
         ...state,
         [payload.id]: payload,
@@ -19,6 +19,16 @@ export default function decks(state = {}, action) {
       delete state[payload];
       return {
         ...state,
+      };
+
+    case ActionType.ADD_CARD:
+      const { id, card } = payload;
+      return {
+        ...state,
+        [id]: {
+          ...state[id],
+          questions: (state[id].questions || []).concat([card]),
+        }
       };
   
     default:

@@ -6,26 +6,27 @@ import styles from "../styles";
 
 import Button from "./Button";
 import DeckDetails from "./DeckDetails";
+import { Colors } from "../utils/constants";
 
 function DeckView(props) {
   const { data, dispatch, navigation } = props;
   const { title, questions = [] } = data;
 
+  const showAddCard = () => navigation.navigate("AddCard", { id: data.id });
   const deleteDeck = () => {
-    navigation.navigate("Home");
+    navigation.goBack();
     dispatch(handleDeleteDeck(data));
   }
 
   return (
     <View style={styles.container}>
-    <View style={[styles.card, { flex: 1 }]}>
-      <DeckDetails title={title} cardAmount={questions.length} />
+      <View style={[styles.card, { flex: 1 }]}>
+        <DeckDetails title={title} cardAmount={questions.length} />
 
-      <Button title="Add Card" onPress={() => { }}/>
-      <Button title="Start Quiz" onPress={() => { }}/>
-      <Button title="Delete Deck" onPress={deleteDeck}/>
-    </View>
+        <Button title="Add Card" onPress={showAddCard} />
+        <Button title="Start Quiz" onPress={() => { }} />
         <Button title="Delete Deck" onPress={deleteDeck} color={Colors.WARNING}/>
+      </View>
     </View>
   );
 }
