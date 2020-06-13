@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionSpecs } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -16,11 +16,19 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Deck" component={DeckView} />
-          <Stack.Screen name="AddCard" component={AddCard} />
+          <Stack.Screen name="Home" component={Home} options={options}/>
+          <Stack.Screen name="Deck" component={DeckView} options={options}/>
+          <Stack.Screen name="AddCard" component={AddCard} options={options}/>
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
   );
 }
+
+const options = {
+  transitionSpec: {
+    open: TransitionSpecs.TransitionIOSSpec,
+    close: TransitionSpecs.TransitionIOSSpec,
+  },
+};
+
