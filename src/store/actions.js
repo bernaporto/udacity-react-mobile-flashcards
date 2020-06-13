@@ -29,9 +29,12 @@ export function handleAddDeck(data) {
 
 export function handleDeleteDeck(deck) {
   return (dispatch) => {
-    dispatch(createAction(ActionType.DELETE_DECK, id));
+    dispatch(createAction(ActionType.DELETE_DECK, deck.id));
 
     return API.delete(deck.id)
-      .catch(() => dispatch(addDeck(deck)));
+      .catch((err) => {
+        console.warn(err);
+        dispatch(addDeck(deck));
+      });
   };
 }

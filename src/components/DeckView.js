@@ -1,13 +1,20 @@
 import React from "react";
 import { View } from "react-native";
 import { connect } from "react-redux";
+import { handleDeleteDeck } from "../store/actions";
 import styles from "../styles";
 
 import Button from "./Button";
 import DeckDetails from "./DeckDetails";
 
 function DeckView(props) {
-  const { title, questions = [] } = props.data;
+  const { data, dispatch, navigation } = props;
+  const { title, questions = [] } = data;
+
+  const deleteDeck = () => {
+    navigation.navigate("Home");
+    dispatch(handleDeleteDeck(data));
+  }
 
   return (
     <View style={styles.container}>
@@ -16,8 +23,9 @@ function DeckView(props) {
 
       <Button title="Add Card" onPress={() => { }}/>
       <Button title="Start Quiz" onPress={() => { }}/>
-      <Button title="Delete Deck" onPress={() => { }}/>
+      <Button title="Delete Deck" onPress={deleteDeck}/>
     </View>
+        <Button title="Delete Deck" onPress={deleteDeck} color={Colors.WARNING}/>
     </View>
   );
 }

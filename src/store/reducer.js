@@ -16,9 +16,9 @@ export default function decks(state = {}, action) {
       };
 
     case ActionType.DELETE_DECK:
+      delete state[payload];
       return {
         ...state,
-        [payload]: undefined,
       };
   
     default:

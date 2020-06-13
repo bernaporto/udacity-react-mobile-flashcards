@@ -7,7 +7,7 @@ function DeckDetails(props) {
   const { title, cardAmount } = props;
 
   return (
-    <View>
+    <View style={{ margin: 10 }}>
       <Title>{title}</Title>
       <Text style={styles.centerText}>{`${cardAmount} cards`}</Text>
     </View>

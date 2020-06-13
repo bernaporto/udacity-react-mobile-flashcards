@@ -33,7 +33,7 @@ function getApi() {
           delete data[id];
 
           AsyncStorage.setItem(
-            CALENDAR_STORAGE_KEY,
+            StorageKey.DECK_LIST,
             JSON.stringify(data)
           );
         });
