@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import Home from './components/Home';
-import Deck from './components/Deck';
+import DeckView from './components/DeckView';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Deck" component={Deck} />
+          <Stack.Screen name="Deck" component={DeckView} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

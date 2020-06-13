@@ -6,7 +6,7 @@ import styles from "../styles";
 import Button from "./Button";
 import DeckDetails from "./DeckDetails";
 
-function Deck(props) {
+function DeckView(props) {
   const { title, questions = [] } = props.data;
 
   return (
@@ -30,4 +30,4 @@ function mapStateToProps(state, { route }) {
   };
 }
 
-export default connect(mapStateToProps)(Deck);
+export default connect(mapStateToProps)(DeckView);
