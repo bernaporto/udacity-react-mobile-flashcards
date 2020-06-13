@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { connect } from "react-redux";
 import { handleAddDeck } from "../store/actions";
 import styles from "../styles";
-import Title from "./Title";
 import Button from "./Button";
 import InputField from "./InputField";
 
@@ -21,7 +20,7 @@ function AddDeckView({ dispatch, navigation }) {
   return(
     <View style={styles.container}>
       <View style={[styles.card, { flex: 1 }]}>
-        <Title>What is the title of the new deck?</Title>
+        <Text style={styles.text.title}>What is the title of the new deck?</Text>
 
         <View style={{ marginBottom: 10 }}/>
 

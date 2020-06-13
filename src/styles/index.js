@@ -41,7 +41,7 @@ const input = StyleSheet.create({
   },
 });
 
-const buttons = StyleSheet.create({
+const button = StyleSheet.create({
   default: {
     backgroundColor: Colors.PRIMARY,
     padding: 6,
@@ -57,10 +57,18 @@ const buttons = StyleSheet.create({
     fontWeight: "bold",
     textAlign: 'center',
   },
-}); 
+});
+
+const text = StyleSheet.create({
+  title: {
+    textAlign: "center",
+    fontSize: 24,
+  }
+});
 
 export default {
   input,
-  buttons,
+  button,
+  text,
   ...main,
 };

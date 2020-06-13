@@ -7,14 +7,14 @@ function Button(props) {
   const { color, disabled, onPress, title } = props;
 
   const style = [
-    styles.buttons.default,
+    styles.button.default,
     {
       backgroundColor: disabled ? Colors.GREY : color || Colors.PRIMARY,
     }
   ];
   return (
     <TouchableOpacity disabled={disabled} style={style} onPress={onPress}>
-      <Text style={styles.buttons.text}>{ title.toUpperCase() }</Text>
+      <Text style={styles.button.text}>{ title.toUpperCase() }</Text>
     </TouchableOpacity>
   )
 }
