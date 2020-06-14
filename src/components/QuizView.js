@@ -23,7 +23,7 @@ class QuizView extends Component {
     this.setState({ rightAnswers: 0 });
   }
 
-  setRightAnswer = (amount) => {
+  addRightAnswer = (amount) => {
     const rightAnswers = this.state.rightAnswers + amount;
     this.setState({ rightAnswers });
   };
@@ -36,8 +36,8 @@ class QuizView extends Component {
         <Text style={[styles.text.info, styles.text.bold]}>{this.quizCtrl.getInfo()}</Text>
         <QuizCard
           card={card}
-          setRightAnswer={() => this.setRightAnswer(1)}
-          setWrongAnswer={() => this.setRightAnswer(0)}
+          setRightAnswer={() => this.addRightAnswer(1)}
+          setWrongAnswer={() => this.addRightAnswer(0)}
         />
       </View>
     );
@@ -45,7 +45,7 @@ class QuizView extends Component {
 
   getQuizResult = () => {
     const { rightAnswers } = this.state;
-    const { cards, id } = this.props;
+    const { cards, id, navigation } = this.props;
 
     const results = {
       rightAnswers,
@@ -58,6 +58,7 @@ class QuizView extends Component {
         id={id}
         results={results}
         onRestart={this.restartQuiz}
+        goBack={() => navigation.goBack()}
       />
     );
   };

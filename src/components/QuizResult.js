@@ -8,7 +8,7 @@ import Button from "./Button";
 import DeckDetails from "./DeckDetails";
 
 function QuizResult(props) {
-  const { title, cardAmount, results, onRestart } = props;
+  const { title, cardAmount, results, onRestart, goBack } = props;
 
   const getResultText = (text, bold) => {
     const textStyle = [
@@ -34,6 +34,7 @@ function QuizResult(props) {
       </View>
 
       <Button title="Restart Quiz" color={Colors.SECONDARY} onPress={onRestart} />
+      <Button title="Back to Deck" color={Colors.TERTIARY} onPress={goBack} />
     </View>
   );
 }
