@@ -62,13 +62,20 @@ const text = StyleSheet.create({
     textAlign: "center",
     fontSize: 24,
   },
-  counter: {
-    alignSelf: "flex-end",
-    fontWeight: "bold",
-    fontSize: 14,
-  },
   center: {
     textAlign: "center",
+  },
+  bold: {
+    fontWeight: "bold",
+  },
+  result: {
+    marginTop: 5,
+    marginBottom: 5,
+    fontSize: 18,
+  },
+  info: {
+    alignSelf: "flex-end",
+    fontSize: 14,
   },
 });
 
