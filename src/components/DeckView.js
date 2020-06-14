@@ -24,12 +24,15 @@ function DeckView(props) {
   return (
     <View style={styles.container}>
       <View style={[styles.card, styles.fill]}>
-        <DeckDetails title={title} cardAmount={questions.length} />
+        <View style={[styles.fill, styles.center]}>
+          <DeckDetails title={title} cardAmount={questions.length} />
+        </View>
+        
+        <View style={styles.fill}>
+          <Button title="Add Card" onPress={showAddCard} />
+          <Button title="Start Quiz" disabled={!quizEnabled} onPress={startQuiz} color={Colors.SECONDARY}/>
+        </View>
 
-        <View style={{ marginBottom: 10 }}/>
-
-        <Button title="Add Card" onPress={showAddCard} />
-        <Button title="Start Quiz" disabled={!quizEnabled} onPress={startQuiz} color={Colors.SECONDARY}/>
         <Button title="Delete Deck" clear onPress={deleteDeck} color={Colors.WARNING}/>
       </View>
     </View>
