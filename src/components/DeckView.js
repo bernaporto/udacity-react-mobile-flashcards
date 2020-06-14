@@ -7,6 +7,7 @@ import styles from "../styles";
 
 import Button from "./Button";
 import DeckDetails from "./DeckDetails";
+import { valuesToArray } from "../utils/utils";
 
 function DeckView(props) {
   const { data, dispatch, navigation } = props;
@@ -40,10 +41,14 @@ function DeckView(props) {
 }
 
 function mapStateToProps(state, { route }) {
-  const id = route.params.id;
+  const id = route.params && route.params.id;
+
+  if (id) return {
+    data: state[id] || {},
+  };
 
   return {
-    data: state[id] || {},
+    data: valuesToArray(state).pop() || {},
   };
 }
 
