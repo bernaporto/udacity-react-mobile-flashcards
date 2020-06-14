@@ -34,7 +34,7 @@ class Home extends Component {
 
   render() {
     const tabBarOptions = {
-      activeTintColor: Colors.PRIMARY,
+      activeTintColor: Colors.TERTIARY,
     };
 
     return (

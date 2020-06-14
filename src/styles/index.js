@@ -5,7 +5,7 @@ const main = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: Colors.BACKGROUND,
+    backgroundColor: Colors.TERTIARY,
   },
   card: {
     margin: 5,
@@ -59,8 +59,10 @@ const button = StyleSheet.create({
 
 const text = StyleSheet.create({
   title: {
+    color: Colors.TERTIARY,
+    fontSize: 22,
+    fontWeight: "500",
     textAlign: "center",
-    fontSize: 24,
   },
   center: {
     textAlign: "center",
