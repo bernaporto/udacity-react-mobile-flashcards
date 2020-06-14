@@ -22,14 +22,16 @@ function AddDeckView({ dispatch, navigation }) {
   return(
     <View style={styles.container}>
       <View style={[styles.card, styles.fill]}>
-        <Text style={styles.text.title}>What is the title of the new deck?</Text>
+        <View style={styles.fill}>
+          <Text style={styles.text.title}>What is the title of the new deck?</Text>
 
-        <View style={{ marginBottom: 10 }}/>
+          <View style={{ marginBottom: 10 }}/>
 
-        <InputField
-          onChangeText={updateTitle}
-          value={title}
-        />
+          <InputField
+            onChangeText={updateTitle}
+            value={title}
+          />
+        </View>
 
         <Button title="Create Deck" onPress={submit} disabled={!title}/>
       </View>
