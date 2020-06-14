@@ -14,13 +14,13 @@ const main = StyleSheet.create({
     backgroundColor: Colors.WHITE,
     borderRadius: 8,
   },
+  fill: {
+    flex: 1,
+  },
   center: {
     alignContent: "center",
     justifyContent: "center",
-  },
-  centerText: {
-    textAlign: "center",
-  },
+  }
 });
 
 const input = StyleSheet.create({
@@ -61,7 +61,15 @@ const text = StyleSheet.create({
   title: {
     textAlign: "center",
     fontSize: 24,
-  }
+  },
+  counter: {
+    alignSelf: "flex-end",
+    fontWeight: "bold",
+    fontSize: 14,
+  },
+  center: {
+    textAlign: "center",
+  },
 });
 
 export default {

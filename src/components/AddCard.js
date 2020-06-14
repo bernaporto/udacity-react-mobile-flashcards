@@ -24,7 +24,7 @@ function AddCard(props) {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.card, { flex: 1 }]}>
+      <View style={[styles.card, styles.fill]}>
         <InputField
           title="Question"
           onChangeText={updateQuestion}

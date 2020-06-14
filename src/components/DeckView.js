@@ -19,15 +19,17 @@ function DeckView(props) {
     dispatch(handleDeleteDeck(data));
   }
 
+  const quizEnabled = data.questions && data.questions.length > 0;
+
   return (
     <View style={styles.container}>
-      <View style={[styles.card, { flex: 1 }]}>
+      <View style={[styles.card, styles.fill]}>
         <DeckDetails title={title} cardAmount={questions.length} />
 
         <View style={{ marginBottom: 10 }}/>
 
         <Button title="Add Card" onPress={showAddCard} />
-        <Button title="Start Quiz" onPress={startQuiz} color={Colors.SECONDARY}/>
+        <Button title="Start Quiz" disabled={!quizEnabled} onPress={startQuiz} color={Colors.SECONDARY}/>
         <Button title="Delete Deck" clear onPress={deleteDeck} color={Colors.WARNING}/>
       </View>
     </View>

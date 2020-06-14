@@ -8,7 +8,7 @@ function DeckDetails(props) {
   return (
     <View style={{ margin: 10 }}>
       <Text style={styles.text.title}>{title}</Text>
-      <Text style={styles.centerText}>{`${cardAmount} cards`}</Text>
+      <Text style={styles.text.center}>{`${cardAmount} cards`}</Text>
     </View>
   );
 }

@@ -21,7 +21,7 @@ function AddDeckView({ dispatch, navigation }) {
 
   return(
     <View style={styles.container}>
-      <View style={[styles.card, { flex: 1 }]}>
+      <View style={[styles.card, styles.fill]}>
         <Text style={styles.text.title}>What is the title of the new deck?</Text>
 
         <View style={{ marginBottom: 10 }}/>
