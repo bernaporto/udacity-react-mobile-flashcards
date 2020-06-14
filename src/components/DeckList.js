@@ -1,10 +1,10 @@
-import React from "react";
-import { View, FlatList } from "react-native";
-import { connect } from "react-redux";
-import { valuesToArray } from "../utils/utils";
+import React from 'react';
+import { View, FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import { valuesToArray } from '../utils/utils';
 
-import DeckItem from "./DeckItem";
-import styles from "../styles";
+import DeckItem from './DeckItem';
+import styles from '../styles';
 
 function DeckList(props) {
   const { decks } = props;

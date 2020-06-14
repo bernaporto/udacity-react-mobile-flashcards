@@ -1,9 +1,9 @@
-import React from "react";
-import { TextInput, View, Text } from "react-native";
-import styles from "../styles";
+import React from 'react';
+import { TextInput, View, Text } from 'react-native';
+import styles from '../styles';
 
 export default function InputField(props) {
-  const { value, onChangeText, title, placeholder = "" } = props;
+  const { value, onChangeText, title, placeholder = '' } = props;
 
   return (
     <View style={styles.input.container}>
@@ -15,5 +15,5 @@ export default function InputField(props) {
         value={value}
       />
     </View>
-  )
+  );
 }

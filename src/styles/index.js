@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { Colors } from "../utils/constants";
+import { StyleSheet } from 'react-native';
+import { Colors } from '../utils/constants';
 
 const main = StyleSheet.create({
   container: {
@@ -19,8 +19,8 @@ const main = StyleSheet.create({
     flex: 1,
   },
   center: {
-    alignContent: "center",
-    justifyContent: "center",
+    alignContent: 'center',
+    justifyContent: 'center',
   }
 });
 
@@ -49,11 +49,11 @@ const button = StyleSheet.create({
     height: 35,
     marginTop: 3,
     marginBottom: 3,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   text: {
     fontSize: 12,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     textAlign: 'center',
   },
 });
@@ -62,14 +62,14 @@ const text = StyleSheet.create({
   title: {
     color: Colors.TERTIARY,
     fontSize: 22,
-    fontWeight: "500",
-    textAlign: "center",
+    fontWeight: '500',
+    textAlign: 'center',
   },
   center: {
-    textAlign: "center",
+    textAlign: 'center',
   },
   bold: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   result: {
     marginTop: 5,
@@ -77,7 +77,7 @@ const text = StyleSheet.create({
     fontSize: 18,
   },
   info: {
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
     fontSize: 14,
   },
 });

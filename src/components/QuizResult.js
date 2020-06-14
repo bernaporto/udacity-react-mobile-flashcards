@@ -1,11 +1,11 @@
-import React from "react";
-import { View, Text } from "react-native";
-import { connect } from "react-redux";
-import { Colors } from "../utils/constants";
-import styles from "../styles";
+import React from 'react';
+import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { Colors } from '../utils/constants';
+import styles from '../styles';
 
-import Button from "./Button";
-import DeckDetails from "./DeckDetails";
+import Button from './Button';
+import DeckDetails from './DeckDetails';
 
 function QuizResult(props) {
   const { title, cardAmount, results, onRestart, goBack } = props;

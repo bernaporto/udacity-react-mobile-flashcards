@@ -1,4 +1,4 @@
-import { ActionType } from "./actions";
+import { ActionType } from './actions';
 
 export default function decks(state = {}, action) {
   const { type, payload } = action;
@@ -12,19 +12,21 @@ export default function decks(state = {}, action) {
     case ActionType.SET_DECK:
       return mergeDeck(state, payload);
 
-    case ActionType.DELETE_DECK:
+    case ActionType.DELETE_DECK: {
       delete state[payload];
       return {
         ...state,
       };
+    }
 
-    case ActionType.ADD_CARD:
+    case ActionType.ADD_CARD: {
       const { id, card } = payload;
       const deck = { ...state[id] };
       deck.questions = (deck.questions || []).concat([card]);
 
       return mergeDeck(state, deck);
-  
+    }
+
     default:
       return state;
   }

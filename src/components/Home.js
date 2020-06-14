@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { connect } from "react-redux";
-import { handleInitialData } from "../store/actions";
-import { TabIds, TabNameMap, TabIconMap, Colors } from "../utils/constants";
-import { Entypo } from "@expo/vector-icons";
+import React, { Component } from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { connect } from 'react-redux';
+import { handleInitialData } from '../store/actions';
+import { TabIds, TabNameMap, TabIconMap, Colors } from '../utils/constants';
+import { Entypo } from '@expo/vector-icons';
 
-import DeckList from "./DeckList";
-import AddDeck from "./AddDeck";
+import DeckList from './DeckList';
+import AddDeck from './AddDeck';
 
 const Tabs = createBottomTabNavigator();
 

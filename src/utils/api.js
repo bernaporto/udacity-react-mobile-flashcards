@@ -11,8 +11,8 @@ async function mergeItem(id, entry) {
     JSON.stringify({
       [id]: entry,
     }),
-  );  
-};
+  );
+}
 
 function getApi() {
   return {
@@ -46,7 +46,7 @@ function getApi() {
           );
         });
     }
-  }
-};
+  };
+}
 
 export default getApi();

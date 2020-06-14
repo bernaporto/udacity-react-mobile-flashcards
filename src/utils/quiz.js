@@ -1,4 +1,4 @@
-import { shuffleArray } from "./utils";
+import { shuffleArray } from './utils';
 
 export default function getQuizController(cards) {
   const shuffled = shuffleArray(cards);
@@ -8,10 +8,10 @@ export default function getQuizController(cards) {
     getInfo() {
       const total = shuffled.length;
       const curr = Math.min(nextIndex, total);
-      
+
       return `${curr}/${total}`;
     },
-    
+
     getNextCard() {
       const card = shuffled[nextIndex];
       nextIndex++;

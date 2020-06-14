@@ -1,10 +1,10 @@
-import API from "../utils/api";
+import API from '../utils/api';
 
 export const ActionType = {
-  RECEIVE_DECKS: "RECEIVE_DECKS",
-  SET_DECK: "SET_DECK",
-  DELETE_DECK: "DELETE_DECK",
-  ADD_CARD: "ADD_CARD",
+  RECEIVE_DECKS: 'RECEIVE_DECKS',
+  SET_DECK: 'SET_DECK',
+  DELETE_DECK: 'DELETE_DECK',
+  ADD_CARD: 'ADD_CARD',
 };
 
 function createAction(type, payload) {

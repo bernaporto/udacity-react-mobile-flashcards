@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { View } from "react-native";
-import { connect } from "react-redux";
-import { handleAddCard } from "../store/actions";
-import styles from "../styles";
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { handleAddCard } from '../store/actions';
+import styles from '../styles';
 
-import Button from "./Button";
-import InputField from "./InputField";
+import Button from './Button';
+import InputField from './InputField';
 
 function AddCard(props) {
-  const [question, updateQuestion] = useState("");
-  const [answer, updateAnswer] = useState("");
+  const [question, updateQuestion] = useState('');
+  const [answer, updateAnswer] = useState('');
 
   const { dispatch, navigation, route } = props;
   const id = route.params.id;
@@ -17,8 +17,8 @@ function AddCard(props) {
   const submit = () => {
     dispatch(handleAddCard(id, { question, answer }));
 
-    updateQuestion("");
-    updateAnswer("");
+    updateQuestion('');
+    updateAnswer('');
 
     navigation.goBack();
   };

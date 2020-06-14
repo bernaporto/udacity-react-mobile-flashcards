@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { View, Text } from "react-native";
-import { Colors } from "../utils/constants";
-import styles from "../styles";
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import { Colors } from '../utils/constants';
+import styles from '../styles';
 
-import Button from "./Button";
+import Button from './Button';
 
 function QuizCard(props) {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -12,7 +12,7 @@ function QuizCard(props) {
   const { card, setRightAnswer, setWrongAnswer } = props;
 
   const displayText = showAnswer ? card.answer : card.question;
-  const buttonText = showAnswer ? "Show Question" : "Show Answer";
+  const buttonText = showAnswer ? 'Show Question' : 'Show Answer';
 
   return (
     <View style={[styles.fill]}>

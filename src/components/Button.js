@@ -1,7 +1,7 @@
-import React from "react";
-import { TouchableOpacity, Text } from "react-native";
-import { Colors } from "../utils/constants";
-import styles from "../styles";
+import React from 'react';
+import { TouchableOpacity, Text } from 'react-native';
+import { Colors } from '../utils/constants';
+import styles from '../styles';
 
 function Button(props) {
   const { color, disabled, clear, onPress, title } = props;
@@ -20,7 +20,7 @@ function Button(props) {
     <TouchableOpacity disabled={disabled} style={buttonStyle} onPress={onPress}>
       <Text style={textStyle}>{ title.toUpperCase() }</Text>
     </TouchableOpacity>
-  )
+  );
 }
 
 export default Button;

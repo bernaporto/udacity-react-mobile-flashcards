@@ -1,10 +1,10 @@
-import React from "react";
-import { TouchableWithoutFeedback, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { ScreenIds } from "../utils/constants";
-import styles from "../styles";
+import React from 'react';
+import { TouchableWithoutFeedback, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { ScreenIds } from '../utils/constants';
+import styles from '../styles';
 
-import DeckDetails from "./DeckDetails";
+import DeckDetails from './DeckDetails';
 
 function DeckItem(props) {
   const navigation = useNavigation();

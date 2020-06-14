@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import { View, Text } from "react-native";
-import { connect } from "react-redux";
-import { handleAddDeck } from "../store/actions";
-import { ScreenIds } from "../utils/constants";
-import styles from "../styles";
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { handleAddDeck } from '../store/actions';
+import { ScreenIds } from '../utils/constants';
+import styles from '../styles';
 
-import Button from "./Button";
-import InputField from "./InputField";
+import Button from './Button';
+import InputField from './InputField';
 
 function AddDeckView({ dispatch, navigation }) {
-  const [title, updateTitle] = useState("");
+  const [title, updateTitle] = useState('');
 
   const submit = () => {
     dispatch(handleAddDeck({ title }));
 
-    updateTitle("");
+    updateTitle('');
 
     navigation.navigate(ScreenIds.DECK);
   };

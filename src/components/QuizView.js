@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { View, Text } from "react-native";
-import getQuizController from "../utils/quiz";
-import styles from "../styles";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { View, Text } from 'react-native';
+import getQuizController from '../utils/quiz';
+import styles from '../styles';
 
-import QuizCard from "./QuizCard";
-import QuizResult from "./QuizResult";
+import QuizCard from './QuizCard';
+import QuizResult from './QuizResult';
 
 class QuizView extends Component {
   state = {
@@ -30,7 +30,7 @@ class QuizView extends Component {
 
   getQuizCard = () => {
     const card = this.quizCtrl.getNextCard();
-    
+
     return (
       <View style={styles.fill}>
         <Text style={[styles.text.info, styles.text.bold]}>{this.quizCtrl.getInfo()}</Text>
@@ -65,7 +65,7 @@ class QuizView extends Component {
 
   render() {
     const isOver = this.quizCtrl.isOver();
-    
+
     return (
       <View style={styles.container}>
         <View style={[styles.card, styles.fill]}>
@@ -83,7 +83,7 @@ function mapStateToProps(state, { route }) {
   return {
     id,
     cards: (deck && deck.questions) || [],
-  }
+  };
 }
 
 export default connect(mapStateToProps)(QuizView);
