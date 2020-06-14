@@ -5,6 +5,7 @@ const main = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    paddingBottom: 20,
     backgroundColor: Colors.TERTIARY,
   },
   card: {
