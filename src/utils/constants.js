@@ -22,6 +22,16 @@ export const TabIds = {
   ADD_DECK: "ADD_DECK",
 };
 
+export const TabNameMap = {
+  [TabIds.DECKS]: "Decks",
+  [TabIds.ADD_DECK]: "Add Deck",
+}
+
+export const TabIconMap = {
+  [TabIds.DECKS]: "list",
+  [TabIds.ADD_DECK]: "add-to-list",
+}
+
 export const TitleMap = {
   [ScreenIds.HOME]: "Deck List",
   [TabIds.ADD_DECK]: "Create New Deck",
