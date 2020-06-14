@@ -1,26 +1,29 @@
 import React from 'react';
 import { View } from 'react-native';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { handleDeleteDeck } from '../store/actions';
 import { Colors, ScreenIds } from '../utils/constants';
+import { valuesToArray } from '../utils/utils';
 import styles from '../styles';
 
 import Button from './Button';
 import DeckDetails from './DeckDetails';
-import { valuesToArray } from '../utils/utils';
 
 function DeckView(props) {
-  const { data, dispatch, navigation } = props;
-  const { title = '', questions = [] } = data;
+  const { navigation, route } = props;
+  const dispatch = useDispatch();
+  const data = useSelector(state => getDeckData(state, route.params));
 
-  const showAddCard = () => navigation.navigate(ScreenIds.ADD_CARD, { id: data.id });
-  const startQuiz = () => navigation.navigate(ScreenIds.QUIZ, { id: data.id });
   const deleteDeck = () => {
     navigation.goBack();
     dispatch(handleDeleteDeck(data));
   };
 
-  const quizEnabled = data.questions && data.questions.length > 0;
+  const { id, title, questions = [] } = data;
+  const quizEnabled = questions.length > 0;
+
+  const showAddCard = () => navigation.navigate(ScreenIds.ADD_CARD, { id });
+  const startQuiz = () => navigation.navigate(ScreenIds.QUIZ, { id });
 
   return (
     <View style={styles.container}>
@@ -40,16 +43,11 @@ function DeckView(props) {
   );
 }
 
-function mapStateToProps(state, { route }) {
-  const id = route.params && route.params.id;
+function getDeckData(state, params) {
+  const id = params && params.id;
 
-  if (id) return {
-    data: state[id] || {},
-  };
-
-  return {
-    data: valuesToArray(state).pop() || {},
-  };
+  if (id) return state[id] || {};
+  return valuesToArray(state).pop() || {};
 }
 
-export default connect(mapStateToProps)(DeckView);
+export default DeckView;

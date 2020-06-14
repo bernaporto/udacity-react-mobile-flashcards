@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Colors } from '../utils/constants';
 import styles from '../styles';
 
@@ -8,7 +8,8 @@ import Button from './Button';
 import DeckDetails from './DeckDetails';
 
 function QuizResult(props) {
-  const { title, cardAmount, results, onRestart, goBack } = props;
+  const { id, results, onRestart, goBack } = props;
+  const { title, cardAmount } = useSelector(state => getDeckData(state, id));
 
   const getResultText = (text, bold) => {
     const textStyle = [
@@ -39,13 +40,11 @@ function QuizResult(props) {
   );
 }
 
-function mapStateToProps(state, { id }) {
-  const deck = state[id];
-
+function getDeckData(state, id) {
   return {
-    title: deck.title,
-    cardAmount: deck.questions.length,
+    title: state[id].title,
+    cardAmount: state[id].questions.length,
   };
 }
 
-export default connect(mapStateToProps)(QuizResult);
+export default QuizResult;
