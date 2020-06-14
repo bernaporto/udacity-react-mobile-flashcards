@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { Colors } from '../utils/constants';
 import styles from '../styles';
@@ -10,6 +10,7 @@ function QuizCard(props) {
   const toggleShowAnswer = () => setShowAnswer(!showAnswer);
 
   const { card, setRightAnswer, setWrongAnswer } = props;
+  useEffect(() => setShowAnswer(false), [card]);
 
   const displayText = showAnswer ? card.answer : card.question;
   const buttonText = showAnswer ? 'Show Question' : 'Show Answer';
