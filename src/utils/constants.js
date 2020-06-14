@@ -21,3 +21,11 @@ export const TabIds = {
   DECKS: "DECKS",
   ADD_DECK: "ADD_DECK",
 };
+
+export const TitleMap = {
+  [ScreenIds.HOME]: "Deck List",
+  [TabIds.ADD_DECK]: "Create New Deck",
+  [ScreenIds.ADD_CARD]: "New Card",
+  [ScreenIds.DECK]: "Deck Info",
+  [ScreenIds.QUIZ]: "Quiz",
+};
