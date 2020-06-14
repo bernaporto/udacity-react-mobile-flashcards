@@ -6,7 +6,6 @@ import styles from "../styles";
 
 import Button from "./Button";
 import InputField from "./InputField";
-import KeyboardSafeArea from "./KeyboardSafeArea";
 
 function AddCard(props) {
   const [question, updateQuestion] = useState("");
@@ -25,27 +24,23 @@ function AddCard(props) {
   };
 
   return (
-    <KeyboardSafeArea>
-      <View style={styles.container}>
-        <View style={[styles.card, styles.fill]}>
-          <View style={styles.fill}>
-            <InputField
-              title="Question"
-              onChangeText={updateQuestion}
-              value={question}
-            />
+    <View style={styles.container}>
+      <View style={[styles.card, styles.fill]}>
+        <InputField
+          title="Question"
+          onChangeText={updateQuestion}
+          value={question}
+        />
 
-            <InputField
-              title="Answer"
-              onChangeText={updateAnswer}
-              value={answer}
-            />
-          </View>
+        <InputField
+          title="Answer"
+          onChangeText={updateAnswer}
+          value={answer}
+        />
 
-          <Button title="Submit" onPress={submit} disabled={!question || !answer} />
-        </View>
+        <Button title="Submit" onPress={submit} disabled={!question || !answer} />
       </View>
-    </KeyboardSafeArea>
+    </View>
   );
 }
 
