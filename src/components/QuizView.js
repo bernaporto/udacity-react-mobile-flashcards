@@ -11,12 +11,7 @@ class QuizView extends Component {
   state = {
     rightAnswers: 0
   };
-
-  componentWillMount() {
-    if (!this.quizCtrl) {
-      this.quizCtrl = getQuizController(this.props.cards);
-    }
-  }
+  quizCtrl = getQuizController(this.props.cards);
 
   restartQuiz = () => {
     this.quizCtrl = getQuizController(this.props.cards);
