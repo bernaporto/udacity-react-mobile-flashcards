@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Colors } from '../utils/constants';
+import { postponeLocalNotifications } from '../utils/notifications';
 import styles from '../styles';
 
 import Button from './Button';
@@ -10,6 +11,7 @@ import DeckDetails from './DeckDetails';
 function QuizResult(props) {
   const { id, results, onRestart, goBack } = props;
   const { title, cardAmount } = useSelector(state => getDeckData(state, id));
+  useEffect(postponeLocalNotifications, [id]);
 
   const getResultText = (text, bold) => {
     const textStyle = [

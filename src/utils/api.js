@@ -1,9 +1,6 @@
 import { AsyncStorage } from 'react-native';
 import { generateUID } from './utils';
-
-export const StorageKey = {
-  DECK_LIST: 'Flashcards:DECK_LIST',
-};
+import { StorageKey } from './constants';
 
 async function mergeItem(id, entry) {
   await AsyncStorage.mergeItem(

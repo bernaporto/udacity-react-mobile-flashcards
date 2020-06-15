@@ -1,3 +1,8 @@
+export const StorageKey = {
+  DECK_LIST: 'Flashcards:DECK_LIST',
+  NOTIFICATIONS: 'Flashcards:NOTIFICATIONS '
+};
+
 export const Colors = {
   PRIMARY: '#5eba61',
   SECONDARY: '#ff7600',

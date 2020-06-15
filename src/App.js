@@ -1,9 +1,10 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, TransitionSpecs } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
 import { ScreenIds, TitleMap, TabIds, Colors } from './utils/constants';
+import { setLocalNotification } from './utils/notifications';
 import store from './store';
 
 import Home from './components/Home';
@@ -14,6 +15,8 @@ import QuizView from './components/QuizView';
 const Stack = createStackNavigator();
 
 export default function App() {
+  useEffect(setLocalNotification);
+
   const getScreen = (id, Component) => {
     const screenProps = {
       name: id,
